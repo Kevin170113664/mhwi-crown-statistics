@@ -1,0 +1,11 @@
+{
+  "name": "mhwi-crown-statistics",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^24.9.0",
+    "lodash": "^4.17.15"
+  }
+}
