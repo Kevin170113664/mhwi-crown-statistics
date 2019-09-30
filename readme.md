@@ -6,7 +6,7 @@ or
 
 > npm install
 
-Waiting for the installation completed...
+Waiting for the installation complete...
 
 > yarn test
 
