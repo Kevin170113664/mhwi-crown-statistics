@@ -40,6 +40,20 @@ const getOwnedAndMissingCount = (data) => _.reduce(_.values(data), (result, curr
   missing: 0
 });
 
+const partitionByDangerous = (bothMissing) => {
+  const I = ['冰鱼龙', '猛牛龙', '痹毒龙', '浮眠龙', '水妖鸟'];
+  const II = ['冰牙龙', '斩龙', '轰龙', '碎龙', '霜翼风漂龙', '雷鄂龙', '硫斩龙', '凶爪龙', '雷狼龙', '黑狼鸟', '战痕黑狼鸟', '迅龙', '金火龙', '银火龙'];
+  const III = ['冰咒龙', '红莲爆鳞龙', '雾瘴尸套龙', '煌怒恐暴龙', '歼世灭尽龙', '溟波龙'];
+
+  const filterBy = (dangerousGroup) => _.filter(bothMissing, (name) => _.some(dangerousGroup, (i) => _.startsWith(name, i)));
+
+  return {
+    I: filterBy(I),
+    II: filterBy(II),
+    III: filterBy(III),
+  }
+};
+
 describe('mhwi统计', () => {
   test('我们都缺的大小金', () => {
 
@@ -48,6 +62,8 @@ describe('mhwi统计', () => {
       _.chain(crownDataForOC).pickBy((owned) => !owned).keys().value()
     );
 
+    const {I, II, III} = partitionByDangerous(bothMissing);
+
     console.log(`
 
 凉快拥有: ${getOwnedAndMissingCount(crownDataForOC).owned}
@@ -55,9 +71,16 @@ describe('mhwi统计', () => {
 KK拥有: ${getOwnedAndMissingCount(crownDataForKK).owned}
 KK缺少: ${getOwnedAndMissingCount(crownDataForKK).missing}
 
-我俩都缺的大小金: 
+我俩都缺的大小金 
 
-${bothMissing.join('\n')}
+I: 
+${I.join('\n')}
+
+II: 
+${II.join('\n')}
+
+III: 
+${III.join('\n')}
 
     `);
 
