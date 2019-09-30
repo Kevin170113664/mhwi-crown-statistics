@@ -1,4 +1,4 @@
-You need to have node and npm/yarn installed.
+You need to have node and npm/yarn installed before you run the command below...
 
 > yarn install
 
