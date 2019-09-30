@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const KK的大小金 = {
+const crownDataForKK = {
   '冰鱼龙 大金': false, '冰鱼龙 小金': false, '猛牛龙 大金': false, '猛牛龙 小金': false,
   '痹毒龙 大金': false, '痹毒龙 小金': false, '浮眠龙 大金': true, '浮眠龙 小金': false,
   '水妖鸟 大金': false, '水妖鸟 小金': false, '冰牙龙 大金': false, '冰牙龙 小金': false,
@@ -16,7 +16,7 @@ const KK的大小金 = {
   '迅龙 大金': true, '迅龙 小金': true,
 };
 
-const 凉快的大小金 = {
+const crownDataForOC = {
   '冰鱼龙 大金': false, '冰鱼龙 小金': true, '猛牛龙 大金': false, '猛牛龙 小金': false,
   '痹毒龙 大金': false, '痹毒龙 小金': false, '浮眠龙 大金': false, '浮眠龙 小金': true,
   '水妖鸟 大金': false, '水妖鸟 小金': false, '冰牙龙 大金': false, '冰牙龙 小金': true,
@@ -43,21 +43,21 @@ const getOwnedAndMissingCount = (data) => _.reduce(_.values(data), (result, curr
 describe('mhwi统计', () => {
   test('我们都缺的大小金', () => {
 
-    const 我俩都缺的大小金 = _.intersection(
-      _.chain(KK的大小金).pickBy((owned) => !owned).keys().value(),
-      _.chain(凉快的大小金).pickBy((owned) => !owned).keys().value()
+    const bothMissing = _.intersection(
+      _.chain(crownDataForKK).pickBy((owned) => !owned).keys().value(),
+      _.chain(crownDataForOC).pickBy((owned) => !owned).keys().value()
     );
 
     console.log(`
 
-凉快拥有: ${getOwnedAndMissingCount(凉快的大小金).owned},
-凉快缺少: ${getOwnedAndMissingCount(凉快的大小金).missing},
-KK拥有: ${getOwnedAndMissingCount(KK的大小金).owned},
-KK缺少: ${getOwnedAndMissingCount(KK的大小金).missing},
+凉快拥有: ${getOwnedAndMissingCount(crownDataForOC).owned}
+凉快缺少: ${getOwnedAndMissingCount(crownDataForOC).missing}
+KK拥有: ${getOwnedAndMissingCount(crownDataForKK).owned}
+KK缺少: ${getOwnedAndMissingCount(crownDataForKK).missing}
 
 我俩都缺的大小金: 
 
-${我俩都缺的大小金.join('\n')}
+${bothMissing.join('\n')}
 
     `);
 
