@@ -22,8 +22,8 @@ Then you should be able to see something like this
   
     凉快拥有: 18
     凉快缺少: 32
-    KK拥有: 24
-    KK缺少: 26
+    KK拥有: 28
+    KK缺少: 22
     
     我俩都缺的大小金 
     
@@ -40,10 +40,8 @@ Then you should be able to see something like this
     轰龙 大金
     碎龙 大金
     硫斩龙 大金
-    雷狼龙 大金
     黑狼鸟 大金
     黑狼鸟 小金
-    战痕黑狼鸟 大金
     银火龙 大金
     
     III: 
