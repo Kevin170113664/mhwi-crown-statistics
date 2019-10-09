@@ -20,16 +20,15 @@ Then you should be able to see something like this
 
 ```text
   
-    凉快拥有: 18
-    凉快缺少: 32
-    KK拥有: 28
-    KK缺少: 22
+    凉快拥有: 22
+    凉快缺少: 28
+    KK拥有: 30
+    KK缺少: 20
     
     我俩都缺的大小金 
     
     I: 
     猛牛龙 大金
-    猛牛龙 小金
     痹毒龙 大金
     痹毒龙 小金
     水妖鸟 大金
@@ -45,8 +44,7 @@ Then you should be able to see something like this
     银火龙 大金
     
     III: 
-    冰咒龙 大金
     红莲爆鳞龙 大金
     煌怒恐暴龙 大金
-
+       
 ```
