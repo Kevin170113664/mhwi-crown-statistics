@@ -29,7 +29,7 @@ const crownDataForOC = {
   '歼世灭尽龙 大金': true, '歼世灭尽龙 小金': true, '雷狼龙 大金': false, '雷狼龙 小金': true,
   '黑狼鸟 大金': false, '黑狼鸟 小金': false, '战痕黑狼鸟 大金': false, '战痕黑狼鸟 小金': true,
   '金火龙 大金': false, '金火龙 小金': true, '银火龙 大金': false, '银火龙 小金': false,
-  '轰龙 大金': true, '轰龙 小金': true,
+  '轰龙 大金': false, '轰龙 小金': true,
 };
 
 const getOwnedAndMissingCount = (data) => _.reduce(_.values(data), (result, current) => {
